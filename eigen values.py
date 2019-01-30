@@ -1,0 +1,10 @@
+import numpy as np
+array=np.arange(16)
+array=array.reshape(4,-1)
+print(array)
+eigenvalues, eigenvectors = np.linalg.eig(array)
+print(eigenvalues)
+print(eigenvectors)
+inverseEigenVectors = np.linalg.inv(eigenvectors)
+diagonal= inverseEigenVectors.dot(array).dot(eigenvectors)
+print(diagonal)
